@@ -1,0 +1,5 @@
+<footer class="site-foot">
+  <span>© {{ now.Year }} {{ .Site.Params.author }}</span>
+  {{ with .Site.Params.email }}<span>·</span><a href="mailto:{{ . }}">email</a>{{ end }}
+  <span>·</span><span>built with <a href="https://gohugo.io">Hugo</a></span>
+</footer>

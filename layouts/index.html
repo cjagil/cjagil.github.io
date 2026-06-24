@@ -1,0 +1,22 @@
+{{ define "main" }}
+  <section class="home-intro">
+    <h1>{{ .Site.Title }}</h1>
+    <p class="tagline">{{ .Site.Params.tagline }}</p>
+    {{ .Content }}
+  </section>
+
+  {{ $essays := where .Site.RegularPages "Section" "essays" }}
+  {{ with $essays }}
+  <section class="home-list">
+    <h2>Recent essays</h2>
+    <ul class="post-list">
+      {{ range first 10 . }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+{{ end }}

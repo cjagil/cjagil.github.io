@@ -1,0 +1,151 @@
+/* ---------------------------------------------------------------------
+   A lightweight, text-first stylesheet. No frameworks, no webfonts,
+   no tracking. Edit the variables below to recolor the whole site.
+   --------------------------------------------------------------------- */
+
+:root {
+  --ink:        #1a1a1a;
+  --ink-soft:   #555;
+  --bg:         #fdfdfb;
+  --rule:       #e2e2dc;
+  --link:       #2a5db0;
+  --link-hover: #163a73;
+  --measure:    42rem;   /* reading column width */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink:        #d8d6cf;
+    --ink-soft:   #9a988f;
+    --bg:         #16161a;
+    --rule:       #2c2c33;
+    --link:       #8fb4ff;
+    --link-hover: #b9d0ff;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  line-height: 1.62;
+  text-rendering: optimizeLegibility;
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+/* --- Header / nav --- */
+.site-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.site-title {
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.site-nav a {
+  margin-left: 1.1rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.site-nav a:hover { color: var(--link-hover); }
+
+/* --- Links --- */
+a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
+a:hover { color: var(--link-hover); }
+
+/* --- Headings --- */
+h1, h2, h3, h4 { line-height: 1.25; font-weight: 700; }
+h1 { font-size: 1.9rem; margin: 0 0 0.6rem; }
+h2 { font-size: 1.35rem; margin: 2.2rem 0 0.6rem; }
+h3 { font-size: 1.1rem; margin: 1.8rem 0 0.4rem; }
+
+.tagline { color: var(--ink-soft); font-size: 1.1rem; font-style: italic; margin-top: 0; }
+.byline { color: var(--ink-soft); font-size: 0.92rem; margin: 0 0 2rem; }
+
+/* --- Prose --- */
+.prose p, .page-intro p { margin: 1.1rem 0; }
+.prose blockquote {
+  margin: 1.4rem 0;
+  padding-left: 1.1rem;
+  border-left: 3px solid var(--rule);
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.prose img { max-width: 100%; height: auto; display: block; margin: 1.6rem auto; }
+.prose hr { border: 0; border-top: 1px solid var(--rule); margin: 2.4rem 0; }
+.prose code {
+  font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.85em;
+  background: var(--rule);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+.prose pre {
+  overflow-x: auto;
+  padding: 1rem;
+  background: var(--rule);
+  border-radius: 5px;
+  font-size: 0.85rem;
+}
+.prose pre code { background: none; padding: 0; }
+
+/* --- Post lists --- */
+.post-list { list-style: none; padding: 0; margin: 1rem 0; }
+.post-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.post-list time { color: var(--ink-soft); font-size: 0.85rem; margin-left: auto; }
+.post-desc { flex-basis: 100%; color: var(--ink-soft); font-size: 0.9rem; }
+
+/* --- Footnotes (Montaigne needs these) --- */
+.footnotes { font-size: 0.9rem; color: var(--ink-soft); border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1rem; }
+.footnotes ol { padding-left: 1.2rem; }
+sup a { text-decoration: none; }
+
+/* --- PDF / file cards --- */
+.files { list-style: none; padding: 0; margin: 1.5rem 0; }
+.files li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.files a { font-weight: 600; }
+.files .meta { display: block; color: var(--ink-soft); font-size: 0.85rem; margin-top: 0.15rem; }
+
+/* --- Footer --- */
+.site-foot {
+  margin-top: 4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.site-foot a { color: var(--ink-soft); }

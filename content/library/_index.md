@@ -14,4 +14,8 @@ PDF into <code>static/pdfs/</code> and add a line to the list below.</p>
     <a href="/pdfs/welcome.pdf">A Note on This Library (sample)</a>
     <span class="meta">Curtis Gile · 2026 · 1 page · placeholder file you can delete</span>
   </li>
+  <li>
+    <a href="/pdfs/pico_-_oration_on_the_dignity_of_man.pdf">Pico's Oration on Human Dignity</a>
+    <span class="meta">15th century essay on individual freedom</span>
+  </li>
 </ul>
